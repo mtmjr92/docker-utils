@@ -1,0 +1,53 @@
+# Image is a base to container
+# Container run any platform
+# Basics commands
+
+# Base image
+FROM openjdk
+
+MAINTAINER user-maintainer
+
+# Current file to another - source -> target
+COPY file.txt /app/file.txt
+
+# Works with URL, doscompact tar.gz
+ADD file.tar.gz /app/file/
+
+# Run command on container
+RUN mkdir /app
+
+# Run after container
+CMD ["ls" , "-a"]
+
+# Main process
+ENTRYPOINT[""]
+
+# Root container
+WORKDIR /app
+
+# Environment variables
+ENV APP=app.jar
+
+# Export any port
+EXPOSE 8080
+
+LABEL Description="Foooooo"
+
+# Default root user
+USER userdefault
+
+VOLUME /apps
+
+###
+### Exemple Aplication
+
+FROM openjdk
+
+ENV APP=app.jar
+
+WORKDIR /app
+
+COPY target/demo-0.0.1-SNAPSHOT.jar /app/spring-app.jar
+
+ENTRYPOINT ["java", "-jar", "spring-app.jar"]
+
