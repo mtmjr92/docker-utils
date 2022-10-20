@@ -62,3 +62,7 @@ docker build -t app:latest .
 docker images (list all images)
 docker rmi -f $(docker images | grep '') --- DELETE ALL IMAGES <none>
 docker rmi -f $(docker images | grep 'name_image')
+
+# REMOVA ALL CONTAINERS
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
