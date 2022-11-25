@@ -63,6 +63,15 @@ docker images (list all images)
 docker rmi -f $(docker images | grep '') --- DELETE ALL IMAGES <none>
 docker rmi -f $(docker images | grep 'name_image')
 
-# REMOVA ALL CONTAINERS
+# REMOVE ALL CONTAINERS
 docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
+
+ ---- DELETE ALLL IMAGES
+docker rmi -f $(docker images | grep '')
+
+--- LOGS
+docker stats 'name'
+docker logs -f --tail 10 name
+
+
