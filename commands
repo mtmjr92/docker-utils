@@ -74,4 +74,17 @@ docker rmi -f $(docker images | grep '')
 docker stats 'name'
 docker logs -f --tail 10 name
 
+# remover não utilizados
 
+docker container prune
+docker image prune
+docker network prune
+docker volume prune
+
+# CMD
+
+docker exec -it ID_CONTAINER bash
+
+# Copiar pastas
+
+docker cp ID_CONTAINER:/opt/jboss/keycloak/standalone/configuration folder
