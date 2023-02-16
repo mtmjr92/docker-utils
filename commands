@@ -88,3 +88,5 @@ docker exec -it ID_CONTAINER bash
 # Copiar pastas
 
 docker cp ID_CONTAINER:/opt/jboss/keycloak/standalone/configuration folder
+
+docker cp geoserver-2.22-SNAPSHOT-sec-keycloak-plugin/. 70af7f7dbf6c:geoserver/webapps/geoserver/WEB-INF/lib/
