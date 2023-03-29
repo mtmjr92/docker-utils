@@ -67,6 +67,8 @@ docker rmi -f $(docker images | grep 'name_image')
 docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 
+docker kill &(docker ps -q); docker rm $(docker ps -a -q); docker rmi $(docker images -q); docker volumes ls -qf dangling=true | xargs -r docker volume rm; docker volume rm $(docker volume ls -q); docker system prune -a
+
  ---- DELETE ALLL IMAGES
 docker rmi -f $(docker images | grep '')
 
