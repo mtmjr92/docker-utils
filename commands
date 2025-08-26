@@ -97,3 +97,4 @@ docker cp geoserver-2.22-SNAPSHOT-sec-keycloak-plugin/. 70af7f7dbf6c:geoserver/w
 
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' keycloak-ge21gt
 
+docker compose -f docker-compose-keycloak.yml up -d
